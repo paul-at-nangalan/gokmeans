@@ -124,7 +124,7 @@ func equal(node1, node2 Node) bool {
 }
 
 // Nearest return the index of the closest centroid from nodes
-func Nearest(in Node, nodes []Node) int {
+func Nearest(in Node, nodes []Node) (indx int, d float64) {
 	count := len(nodes)
 
 	results := make(Node, count)
@@ -148,7 +148,7 @@ func Nearest(in Node, nodes []Node) int {
 		}
 	}
 
-	return mindex
+	return mindex, curdist
 }
 
 // Distance determines the square Euclidean distance between two nodes
