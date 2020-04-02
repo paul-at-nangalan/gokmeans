@@ -91,7 +91,7 @@ func Train2(Nodes []Node, clusterCount int, maxRounds int, centroids []Node) (bo
 		groups := make(map[int][]Node)
 
 		for _, Node := range Nodes {
-			near := Nearest(Node, centroids)
+			near, _ := Nearest(Node, centroids)
 			groups[near] = append(groups[near], Node)
 		}
 
